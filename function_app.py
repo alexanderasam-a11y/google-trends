@@ -148,7 +148,7 @@ def speichere_in_azure_sql(df):
     for attempt in range(retries):
         try:
             conn = pymssql.connect(
-                server="engineerserveralex.database.windows.net",
+                server=os.environ["SQL_SERVER"],
                 user=os.environ["SQL_USERNAME"],
                 password=os.environ["SQL_PASSWORD"],
                 database="engineerdb"
